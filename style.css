@@ -1,0 +1,1189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background: #F9FAFF;
+  color: #363853;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  padding: 30px 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 33px;
+  font-weight: 500;
+}
+
+.logo span {
+  color: #FF7A50;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav a {
+  color: #363853;
+  transition: .3s;
+}
+
+.nav a:hover,
+.nav .active {
+  color: #FF7A50;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+}
+
+/* Стилизация картинок-иконок в шапке (поиск и корзина) */
+.icon-btn img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.cart-btn span {
+  position: absolute;
+
+  top: -8px;
+  right: -8px;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #FF7A50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 10px;
+}
+
+.sign-btn,
+.mobile-sign-btn {
+  width: 120px;
+  height: 50px;
+
+  border: none;
+  border-radius: 12px;
+  background: #FF7A50;
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: 500;
+}
+
+  .mobile-sign-btn {
+    display: none;
+  }
+
+  /* ================= BURGER ================= */
+
+  .burger {
+    width: 30px;
+    height: 22px;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    z-index: 1001;
+  }
+
+  .burger span {
+    width: 100%;
+    height: 3px;
+    background: #363853;
+
+    border-radius: 10px;
+
+    transition: .3s;
+  }
+
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(13px);
+  }
+
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-13px);
+  }
+
+  /* OVERLAY */
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.5);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .3s;
+
+    z-index: 998;
+  }
+
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+/* ================= HERO ================= */
+
+.hero {
+    padding: 40px 0 120px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 530px;
+}
+
+.hero-text h1 {
+    font-size: 72px;
+    line-height: 85px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 23px;
+}
+
+.hero-text h1 span {
+  color: #FF7A50;
+}
+
+.hero-text p {
+  font-size: 20px;
+  line-height: 38px;
+
+  margin-bottom: 45px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.btn {
+  padding: 17px 30px;
+
+  border-radius: 12px;
+
+  background: #FF7A50;
+  color: white;
+
+  display: inline-block;
+}
+
+.download-link {
+  color: #363853;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 680px;
+    position: relative;
+}
+  
+/* ================= SECTION TITLE ================= */
+
+.section-title {
+  text-align: center;
+
+  font-size: 36px;
+
+  margin-bottom: 55px;
+}
+
+.section-title span {
+  color: #FF7A50;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories {
+  padding-bottom: 120px;
+}
+
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+
+  margin-bottom: 50px;
+}
+
+.tab {
+    min-width: 180px;
+    height: 70px;
+    padding: 0 20px;
+    font-size: 20px;
+    font-weight: 400;
+
+  border: 1px solid #eee;
+  border-radius: 10px;
+
+  background: white;
+
+  cursor: pointer;
+
+  transition: .3s;
+  
+  /* Добавлено для выравнивания новой иконки и текста по центру */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Стилизация картинок внутри табов-категорий */
+.tab img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.tab.active,
+.tab:hover {
+  background: #FF7A50;
+  color: white;
+}
+
+/* Изменяем цвет иконки на белый при ховере/активности (если используешь SVG-маску или инверсию), 
+   либо твоя иконка сразу должна быть нужного цвета */
+.tab.active img,
+.tab:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+
+  gap: 25px;
+}
+
+.food-card {
+    box-shadow: 0 4px 30px rgba(0,0,0,.04);
+    padding: 20px; /* Добавил внутренний отступ, чтобы карточки не слипались */
+    background: white;
+    border-radius: 20px;
+    text-align: center;
+    transition: .3s;
+}
+
+.food-card h3 {
+    font-size: 15px;
+    line-height: 22px;
+    min-height: 44px;
+}
+
+.food-card:hover {
+  transform: translateY(-10px);
+}
+
+.food-card img {
+  width: 140px;
+  height: 140px;
+
+  object-fit: contain;
+
+  margin: auto;
+}
+
+.food-card h3 {
+  margin: 18px 0 10px;
+}
+
+.stars {
+  color: #FFC107;
+  margin-bottom: 10px;
+  font-size: 18px;
+  letter-spacing: 2px; /* Небольшой зазор между текстовыми звездами */
+}
+
+.food-card span {
+  display: block;
+
+  margin-bottom: 15px;
+}
+
+.food-card button {
+  width: 110px;
+  height: 35px;
+
+  border: none;
+  border-radius: 6px;
+  background: #FF7A50;
+  color: white;
+
+  cursor: pointer;
+}
+
+/* ================= FEATURES ================= */
+
+.features {
+  padding: 140px 0;
+}
+
+.features-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.features-image img {
+ width: 100%;
+    max-width: 620px;
+}
+
+.features-text {
+  width: 540px;
+}
+
+.features-text h2 {
+  font-size: 36px;
+  line-height: 50px;
+  font-weight: 500;
+
+  margin-bottom: 30px;
+}
+
+.features-text h2 span {
+  color: #FF7A50;
+}
+
+.features-text p {
+  font-size: 20px;
+  line-height: 36px;
+
+  color: rgba(54, 56, 83, 0.9);
+  margin-bottom: 30px;
+}
+
+.features-text ul {
+  margin-bottom: 45px;
+}
+
+.features-text li {
+  list-style: none;
+
+  font-size: 24px;
+
+  margin-bottom: 22px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ВАЖНО: Старый селектор li::before удален, так как мы используем настоящий тег img */
+.features-text li img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.features .btn {
+  width: 176px;
+  height: 58px;
+  border-radius: 30px 30px 1px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+}
+
+/* ================= RESTAURANTS ================= */
+
+.restaurants {
+  padding-bottom: 140px;
+}
+
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 45px 30px;
+}
+
+.restaurant-card {
+  background: white;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+
+  transition: .3s;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-10px);
+}
+
+.restaurant-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.restaurant-info {
+  padding: 22px 25px 25px;
+}
+
+.restaurant-info h3 {
+  font-size: 24px;
+  font-weight: 400;
+
+  margin-bottom: 18px;
+}
+
+.restaurant-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.restaurant-bottom span {
+  font-size: 18px;
+  color: rgba(54, 56, 83, 0.9);
+  
+  /* Для выравнивания новой иконки часов с текстом времени */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Картинка часов */
+.restaurant-bottom span img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.restaurant-bottom button {
+  width: 80px;
+  height: 33px;
+
+  border: none;
+
+  border-radius: 20px 20px 0 20px;
+
+  background: #FF7A50;
+  color: white;
+
+  cursor: pointer;
+
+  transition: .3s;
+  
+  /* Позиционируем стрелочку-картинку ровно по центру кнопки */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Стрелочка внутри кнопки ресторана */
+.restaurant-bottom button img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.restaurant-bottom button:hover {
+  background: #ff6838;
+}
+
+/* ================= MOBILE APP ================= */
+
+.mobile-app {
+  padding-bottom: 140px;
+}
+
+.mobile-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.mobile-text {
+  width: 540px;
+}
+
+.mobile-text h2 {
+  font-size: 36px;
+  line-height: 50px;
+  font-weight: 500;
+
+  margin-bottom: 30px;
+}
+
+.mobile-text span {
+  color: #FF7A50;
+}
+
+.mobile-text p {
+  font-size: 20px;
+  line-height: 30px;
+
+  color: rgba(54, 56, 83, 0.9);
+  margin-bottom: 35px;
+}
+
+.app-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.app-buttons img {
+  width: 180px;
+
+  cursor: pointer;
+  transition: .3s;
+}
+
+.app-buttons img:hover {
+  transform: scale(1.05);
+}
+
+.mobile-image img {
+    width: 100%;
+    max-width: 620px;
+}
+
+/* ================= TESTIMONIAL ================= */
+
+.testimonial {
+  padding-bottom: 140px;
+}
+
+.testimonial-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 60px;
+}
+
+.testimonial-box img {
+ width: 320px;
+    height: auto;
+
+  object-fit: cover;
+
+  border-radius: 25px;
+}
+
+.testimonial-text {
+  width: 540px;
+
+  position: relative;
+}
+
+.testimonial-text p {
+  font-size: 20px;
+  line-height: 38px;
+
+  color: rgba(54, 56, 83, 0.9);
+
+  margin-bottom: 40px;
+
+  position: relative;
+}
+
+.testimonial-text p::before {
+  content: "“";
+
+  position: absolute;
+
+  left: -35px;
+  top: -10px;
+
+  font-size: 80px;
+
+  color: #FF7A50;
+}
+
+.testimonial-text p::after {
+  content: "”";
+  position: absolute;
+
+  right: -20px;
+  bottom: -40px;
+
+  font-size: 80px;
+
+  color: #FF7A50;
+}
+
+.testimonial-text h4 {
+  font-size: 20px;
+  font-weight: 500;
+
+  color: #FF7A50;
+  margin-bottom: 10px;
+}
+
+.testimonial-text span {
+  color: rgba(170, 170, 170, 1);
+}
+
+.testimonial-arrow {
+  width: 48px;
+  height: 48px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+  cursor: pointer;
+
+  transition: .3s;
+  
+  /* Центрирование стрелочек-картинок */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Картинки стрелок влево/вправо в отзывах */
+.testimonial-arrow img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.testimonial-arrow:hover {
+  background: #FF7A50;
+}
+
+/* Если при наведении на кнопку стрелка должна становиться белой */
+.testimonial-arrow:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* ================= SUBSCRIBE ================= */
+
+.subscribe {
+  padding-bottom: 120px;
+}
+
+.subscribe-box {
+  background: #FF7A50;
+
+  border-radius: 30px;
+  padding: 60px 120px;
+
+  text-align: center;
+
+  color: white;
+}
+
+.subscribe-box h2 {
+  font-size: 40px;
+  font-weight: 500;
+
+  margin-bottom: 12px;
+}
+
+.subscribe-box p {
+  font-size: 16px;
+
+  margin-bottom: 35px;
+}
+
+.subscribe-form {
+  position: relative;
+}
+
+.subscribe-form input {
+  width: 100%;
+  height: 78px;
+
+  border: none;
+  border-radius: 70px;
+
+  padding: 0 220px 0 30px;
+
+  font-size: 18px;
+
+  outline: none;
+}
+
+.subscribe-form button {
+  position: absolute;
+
+  top: 9px;
+  right: 9px;
+
+  width: 190px;
+  height: 60px;
+
+  border: none;
+  border-radius: 70px;
+
+  background: #FF7A50;
+  color: white;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  padding-bottom: 40px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+
+  padding-bottom: 60px;
+
+  border-bottom: 1px solid rgba(150, 150, 150, 0.2);
+}
+
+.footer-left {
+  width: 260px;
+}
+
+.footer-left .logo {
+  margin-bottom: 25px;
+}
+
+.footer-left p {
+  margin-bottom: 18px;
+  color: rgba(54, 56, 83, 0.9);
+  
+  /* Ровно выстраиваем новые иконки контактов с текстом */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Иконки телефона, почты и маркера в футере */
+.footer-left p img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.footer-links {
+  display: flex;
+  gap: 120px;
+}
+
+.footer-links h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+.footer-links div {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links a {
+  color: rgba(54, 56, 83, 0.9);
+  margin-bottom: 18px;
+
+  transition: .3s;
+}
+
+.footer-links a:hover {
+  color: #FF7A50;
+}
+
+/* Соцсети в футере */
+.socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.socials a img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* ================= FOOTER BOTTOM ================= */
+
+.footer-bottom {
+  padding: 28px 0;
+}
+
+.footer-bottom-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: rgba(100, 100, 100, 1);
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 35px;
+}
+
+.footer-bottom-links a {
+  font-size: 14px;
+  color: rgba(100, 100, 100, 1);
+
+  transition: .3s;
+}
+
+.footer-bottom-links a:hover {
+  color: #FF7A50;
+}
+
+/* ================= MOBILE & ADAPTIVE ================= */
+
+@media (max-width:1200px){
+  .container{
+    max-width:1000px;
+  }
+
+  .hero-text h1{
+    font-size:58px;
+    line-height:70px;
+  }
+
+  .hero-image img{
+    max-width:550px;
+  }
+
+  .food-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .restaurant-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media (max-width:992px){
+  .container{
+    max-width:760px;
+  }
+
+  .hero-content,
+  .features-content,
+  .mobile-content,
+  .testimonial-box{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-text,
+  .features-text,
+  .mobile-text,
+  .testimonial-text{
+    width:100%;
+    max-width:100%;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .features-text ul{
+    display:inline-block;
+    text-align:left;
+  }
+
+  .food-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .restaurant-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-content{
+    flex-direction:column;
+    gap:50px;
+  }
+
+  .footer-links{
+    width:100%;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap;
+  }
+}
+
+@media (max-width:768px) {
+  .footer-bottom-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .burger{
+    display:flex;
+  }
+
+  .desktop-btn{
+    display:none;
+  }
+
+  .mobile-sign-btn{
+    display:block;
+    margin-top:20px;
+  }
+
+  .nav{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:280px;
+    height:100vh;
+
+    background:#fff;
+    flex-direction:column;
+    justify-content:center;
+    gap:30px;
+
+    box-shadow:-5px 0 20px rgba(0,0,0,.08);
+    transition:.3s;
+    z-index:999;
+  }
+
+  .nav.active{
+    right:0;
+  }
+
+  .hero{
+    padding:30px 0 80px;
+  }
+
+  .hero-text h1{
+    font-size:42px;
+    line-height:55px;
+  }
+
+  .hero-text p{
+    font-size:18px;
+    line-height:32px;
+  }
+
+  .section-title{
+    font-size:30px;
+  }
+
+  .category-tabs{
+    flex-wrap:wrap;
+  }
+
+  .tab{
+    width:calc(50% - 10px);
+  }
+
+  .food-grid{
+    grid-template-columns:1fr;
+  }
+
+  .restaurant-grid{
+    grid-template-columns:1fr;
+  }
+
+  .testimonial-box{
+    gap:30px;
+  }
+
+  .testimonial-box img{
+    width:280px;
+  }
+
+  .testimonial-arrow{
+    width:40px;
+    height:40px;
+  }
+
+  .subscribe-box{
+    padding:40px 25px;
+  }
+
+  .subscribe-box h2{
+    font-size:30px;
+  }
+
+  .subscribe-form input{
+    height:65px;
+    padding:0 20px;
+  }
+
+  .subscribe-form button{
+    position:static;
+    width:100%;
+    margin-top:15px;
+  }
+}
+
+@media (max-width:576px){
+  .logo{
+    font-size:28px;
+  }
+
+  .header-actions{
+    gap:12px;
+  }
+
+  .hero-text h1{
+    font-size:36px;
+    line-height:48px;
+  }
+
+  .hero-text p{
+    font-size:16px;
+    line-height:28px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .tab{
+    width:100%;
+  }
+
+  .food-card{
+    padding:20px 15px;
+  }
+
+  .restaurant-info h3{
+    font-size:20px;
+  }
+
+  .restaurant-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+  }
+
+  .mobile-text h2,
+  .features-text h2{
+    font-size:30px;
+    line-height:40px;
+  }
+
+  .mobile-text p,
+  .features-text p{
+    font-size:16px;
+    line-height:28px;
+  }
+
+  .features-text li{
+    font-size:18px;
+  }
+
+  .testimonial-text p{
+    font-size:18px;
+    line-height:34px;
+  }
+
+  .footer-links{
+    flex-direction:column;
+    gap:30px;
+  }
+
+  .footer-bottom-content{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .footer-bottom-links{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+  }
+}
