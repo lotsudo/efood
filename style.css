@@ -1186,4 +1186,60 @@ a {
     justify-content:center;
     gap:15px;
   }
+/* Уменьшение отступов между блоками */
+
+.hero {
+  padding: 40px 0 60px; 
 }
+
+.categories {
+  padding-bottom: 60px; 
+}
+
+.features {
+  padding: 60px 0; 
+}
+
+.restaurants {
+  padding-bottom: 60px; 
+}
+
+.mobile-app {
+  padding-bottom: 60px; 
+}
+
+.testimonial {
+  padding-bottom: 60px; 
+}
+
+.subscribe {
+  padding-bottom: 60px;
+}
+/* Две колонки в футере на мобильных */
+@media (max-width: 576px) {
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px; 
+    text-align: left;
+  }
+}
+}
+/* Закрепление шапки */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F9FAFF;
+  z-index: 997; 
+  padding: 20px 0; 
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+
+body {
+  padding-top: 100px; 
+}
+
+
